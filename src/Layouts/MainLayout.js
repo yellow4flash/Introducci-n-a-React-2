@@ -39,8 +39,12 @@ const MainLayout = props => {
           </Link>
         </div>
         <Menu mode="inline" theme="light">
-          <Menu.Item>Usuarios</Menu.Item>
-          <Menu.Item>Todos</Menu.Item>
+          <Menu.Item>
+            <Link to="/users">Usuarios</Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/todos">Todos</Link>
+          </Menu.Item>
         </Menu>
       </Sider>
       <Layout>
