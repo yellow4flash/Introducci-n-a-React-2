@@ -6,10 +6,10 @@ import { BarsOutlined, MenuFoldOutlined } from "@ant-design/icons";
 
 const { Header, Footer, Sider, Content } = Layout;
 
-/* const HeaderStyled = styled(header)`
+const HeaderStyled = styled(Header)`
   background: #fff;
-  padding: 0.2rem
-`; */
+  padding: 0.2rem;
+`;
 
 const MainLayout = props => {
   console.log(props);
@@ -30,9 +30,12 @@ const MainLayout = props => {
           background: "#FFF"
         }}
       >
-        <div>
-          <Link>
-            <img src="" />
+        <div className="px-3 py-5">
+          <Link to="/">
+            <img
+              src="https://miro.medium.com/max/500/1*cPh7ujRIfcHAy4kW2ADGOw.png"
+              className="img-fluid"
+            />
           </Link>
         </div>
         <Menu mode="inline" theme="light">
@@ -41,7 +44,7 @@ const MainLayout = props => {
         </Menu>
       </Sider>
       <Layout>
-        <Header>Encabezado</Header>
+        <HeaderStyled>Encabezado</HeaderStyled>
         <Content>{children}</Content>
         <Footer>Footer</Footer>
       </Layout>
