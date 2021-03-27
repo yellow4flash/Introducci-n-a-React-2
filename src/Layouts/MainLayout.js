@@ -1,3 +1,4 @@
+import React from "react";
 import { Layout, Menu, Row, Col } from "antd";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -10,7 +11,7 @@ const { Header, Footer, Sider, Content } = Layout;
   padding: 0.2rem
 `; */
 
-const MainLayout = (props) => {
+const MainLayout = props => {
   console.log(props);
 
   const { children } = props;
