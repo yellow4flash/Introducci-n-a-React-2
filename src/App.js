@@ -8,8 +8,8 @@ export default function App() {
   return (
     <Router>
       <MainLayout>
-        <Route path="/Users" render={props => <Users {...props} />} />
-        <Route path="/Todos" render={props => <Todos {...props} />} />
+        <Route path="/users" render={props => <Users {...props} />} />
+        <Route path="/todos" render={props => <Todos {...props} />} />
       </MainLayout>
     </Router>
   );

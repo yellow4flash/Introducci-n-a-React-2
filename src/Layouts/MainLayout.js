@@ -35,7 +35,7 @@ const MainLayout = props => {
             <img src="" />
           </Link>
         </div>
-        <Menu>
+        <Menu mode="inline" theme="light">
           <Menu.Item>Usuarios</Menu.Item>
           <Menu.Item>Todos</Menu.Item>
         </Menu>
@@ -43,7 +43,7 @@ const MainLayout = props => {
       <Layout>
         <Header>Encabezado</Header>
         <Content>{children}</Content>
-        <Footer>Pie de Página</Footer>
+        <Footer>Footer</Footer>
       </Layout>
     </Layout>
   );
