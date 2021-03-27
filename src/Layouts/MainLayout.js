@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout, Menu, Row, Col } from "antd";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -12,16 +12,18 @@ const HeaderStyled = styled(Header)`
 `;
 
 const MainLayout = props => {
-  console.log(props);
-
   const { children } = props;
   console.log(children);
-
+  const [collapsed, setCollapsed] = useState(true);
+  const toggleMenuSide = () => {
+    setCollapsed(!collapsed);
+  };
   return (
     <Layout>
       <Sider
         trigger={null}
         collapsible
+        collapsed={collapsed}
         collapsedWidth="0"
         breakpoint
         style={{
@@ -34,6 +36,7 @@ const MainLayout = props => {
           <Link to="/">
             <img
               src="https://miro.medium.com/max/500/1*cPh7ujRIfcHAy4kW2ADGOw.png"
+              alt="Logo"
               className="img-fluid"
             />
           </Link>
@@ -48,7 +51,23 @@ const MainLayout = props => {
         </Menu>
       </Sider>
       <Layout>
-        <HeaderStyled>Encabezado</HeaderStyled>
+        <HeaderStyled>
+          <Row type="flex" justify="space-between">
+            {collapsed ? (
+              <BarsOutlined
+                className="trigger"
+                onClick={toggleMenuSide}
+                style={{ fontSize: "1.3rem" }}
+              />
+            ) : (
+              <MenuFoldOutlined
+                className="trigger"
+                onClick={toggleMenuSide}
+                style={{ fontSize: "1.3rem" }}
+              />
+            )}
+          </Row>
+        </HeaderStyled>
         <Content>{children}</Content>
         <Footer>Footer</Footer>
       </Layout>
