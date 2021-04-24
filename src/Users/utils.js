@@ -1,13 +1,16 @@
-
-import {Row, Col} from "antd";
+import { Row, Col } from "antd";
 import styled from "styled-components";
 
-cosnt Title = styled.div`
-font-weight: 800;
-letter-spacing:0.5px;
+const Title = styled.div`
+  font-weight: 800;
+  letter-spacing: 0.5px;
 `;
 
-const 
+const Subtitle = styled.div`
+  font-weight: 700;
+  fontsize: 1em;
+  letter-spacing: 0.3px;
+`;
 
 export const columns = [
   {
@@ -31,14 +34,20 @@ export const columns = [
 export const expandedRowRender = (record, index, indent, expanded) => {
   const { address, company } = record;
   const { city, suite, street } = address;
-  const { catchPhrase, bs, nanc } = company;
+  const { catchPhrase, bs, name } = company;
   return (
     <div className="px-md-5 py-md-2">
-    <Row>
-    <Col>
-    <Title className=""/>
-    </Col>
-    </Row>
+      <Row>
+        <Col>
+          <Title className="">Información del usuario</Title>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Subtitle>Dirección</Subtitle>
+          {street} {suite} {city}
+        </Col>
+      </Row>
     </div>
   );
 };

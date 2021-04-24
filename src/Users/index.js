@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ContainerLayout from "../Layouts/ContainerLayout";
 import {Row, Col, Table} from "antd";
+// own components
+import ContainerLayout from "../Layouts/ContainerLayout";
+import PageHeaderStyled from "../Shared/Common/PageHeader";
 // utils
 import {columns, expandedRowRender} from "./utils.js";
 const Users = () => {
@@ -16,7 +18,8 @@ const Users = () => {
     console.log("response:", users);
   };
   return (
-<ContainerLayout>
+<ContainerLayout backgroundColor="#ffffff" paddingX={2} paddingY={2} marginX={2} marginY={2}>
+<PageHeaderStyled title="Usuarios" className="ml-2 px-0 pt-0"/>
 <Row>
   <Col xs={24}>
     <Table 
@@ -26,7 +29,7 @@ const Users = () => {
     size="mirror"
     expandable={{
       expandedRowRender,
-      expandedRowByClick
+      expandedRowByClick: true,
     }}
     />
   </Col>
